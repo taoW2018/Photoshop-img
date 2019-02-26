@@ -1,0 +1,58 @@
+<!-- <p>这是新生产的{{ hero }}</p> -->
+<!-- <p>{{ hero.name }} 名称</p>
+<div><span>id:</span>{{ hero.id }}</div>
+<div><span>name:</span>{{ hero.name }}</div>
+<h2>{{ hero.name | uppercase }} 测试</h2> -->
+<!-- uppercase 管道格式化所需的 -->
+<!-- <div>
+  <label>
+    name：<input type="text" [(ngModel)]="hero.name" placeholder="name"
+  /></label>
+</div> -->
+<!--[( ngmodel) ] angular的双向绑定语法 -->
+<!-- <h2>My Heroes</h2>
+<ul class="heroes"> -->
+<!-- *ngFor 相当于一层for循环 -->
+<!-- 主从结构 添加click 事件绑定-->
+<!-- <li
+    *ngFor="let item of heroes"
+    (click)="onSelect(item)"
+    class="resdata"
+    [class.selected]="item === selectedHero"
+  >
+    <span class="badge">{{ item.id }}</span> -----<span>{{ item.name }}</span>
+  </li>
+</ul> -->
+<!-- 主从关系  *ngIf主动筛选出符合的内容 -->
+<!-- <div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ selectedHero.id }}</div>
+  <div>
+    <label
+      >name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name" />
+    </label>
+  </div>
+</div> -->
+<!-- 添加模板从视图 -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+<!-- 路由的修改的修改传值 -->
+<h2>路由</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+  </li>
+</ul>
+<div>
+  <label
+    >Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value = ''">
+    add
+  </button>
+</div>

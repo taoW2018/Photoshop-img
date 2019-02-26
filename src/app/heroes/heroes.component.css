@@ -1,0 +1,7 @@
+.resdata {
+  cursor: pointer;
+}
+.selected {
+  cursor: pointer;
+  background: #ff8b8b;
+}
